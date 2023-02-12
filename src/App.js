@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import { Button } from 'react-bootstrap';
 import './App.css';
+import style from './style.module.css'
+
+function handleClick(warna) {
+    alert(`anda mengklik ${warna}`) 
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Button variant='outline-danger' className={style['padding-content']} onClick={() => handleClick('Merah')}>Merah</Button>
+      <Button variant='outline-success' className={style['padding-content']} onClick={() => handleClick('Hijau')}>Hijau</Button>
+      <Button variant='outline-primary' className={style['padding-content']} onClick={() => handleClick('Biru')}>Biru</Button>
+    </>
+  )
 }
 
 export default App;
